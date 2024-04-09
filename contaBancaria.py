@@ -39,7 +39,10 @@ while True:
             
         elif valor_saque > limite_valor_saque:
             print(f"O valor máximo por saque é de R$ {limite_valor_saque:.2f}!")
-            
+         
+        elif valor_saque <= 0:
+            print("O Valor do saque deve ser maior que zero!")
+                
         elif valor_saque > saldo:
             print("Saldo insuficiente para saque!")   
              
@@ -50,8 +53,8 @@ while True:
             print(f"Saque de R$ {valor_saque:.2f} realizado com sucesso!") 
     
     elif opcao == "e":
-        print("Extrato")
-        print(extrato)
+        print("\n" +" Extrato ".center(30, "="))
+        print("Não foram realizadas movimentações." if not extrato else extrato, end="\n")
         print(f"Saldo atual: R$ {saldo:.2f}")
     
     elif opcao == "q":
