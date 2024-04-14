@@ -6,6 +6,10 @@ def menu():
     [d] Depositar
     [s] Sacar
     [e] Extrato
+    [nu] Novo usuário
+    [nc] Nova conta
+    [lc] Listar contas
+    [e] Extrato
     [q] sair
 
     Informe a ação: """
