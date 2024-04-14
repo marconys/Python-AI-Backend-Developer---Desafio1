@@ -54,5 +54,17 @@ def exibir_extrato(saldo, /, *, extrato):
     print("Não foram realizadas movimentações." if not extrato else extrato, end="\n")
     print(f"Saldo atual: R$ {saldo:.2f}")   
     
+def criar_usuario(usuarios):
+    cpf = input("Informe o CPF (somente números): ")
+    if cpf in usuarios:
+        print("\n*** Já existe usuário com esse CPF! ***")
+        return
 
+    nome = input("Informe o nome completo: ")
+    data_nascimento = input("Informe a data de nascimento (dd-mm-aaaa): ")
+    endereco = input("Informe o endereço (logradouro, nro - bairro - cidade/sigla estado): ")
+
+    usuarios[cpf] = {"nome": nome, "data_nascimento": data_nascimento, "endereco": endereco}
+
+    print("=== Usuário criado com sucesso! ===")
  
