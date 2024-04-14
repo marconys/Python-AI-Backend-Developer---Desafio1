@@ -67,4 +67,14 @@ def criar_usuario(usuarios):
     usuarios[cpf] = {"nome": nome, "data_nascimento": data_nascimento, "endereco": endereco}
 
     print("=== Usuário criado com sucesso! ===")
+    
+def criar_conta(agencia, numero_conta, usuarios):
+    cpf = input("Informe o CPF do usuário: ")
+    if cpf not in usuarios:
+        print("\n*** Usuário não encontrado, fluxo de criação de conta encerrado! ***")
+        return None
+
+    conta = {"agencia": agencia, "numero_conta": numero_conta, "usuario": usuarios[cpf]}
+    print("\n=== Conta criada com sucesso! ===")
+    return conta    
  
