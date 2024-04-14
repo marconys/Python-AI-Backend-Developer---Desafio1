@@ -49,4 +49,10 @@ def sacar(*, saldo, valor, extrato, limite, numero_saques, limite_saques):
     return saldo, extrato
 
 
-   
+def exibir_extrato(saldo, /, *, extrato):
+    print("\n" +" Extrato ".center(30, "="))
+    print("Não foram realizadas movimentações." if not extrato else extrato, end="\n")
+    print(f"Saldo atual: R$ {saldo:.2f}")   
+    
+
+ 
