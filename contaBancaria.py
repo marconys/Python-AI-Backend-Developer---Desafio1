@@ -52,7 +52,8 @@ def sacar(*, saldo, valor, extrato, limite, numero_saques, limite_saques):
 def exibir_extrato(saldo, /, *, extrato):
     print("\n" +" Extrato ".center(30, "="))
     print("Não foram realizadas movimentações." if not extrato else extrato, end="\n")
-    print(f"Saldo atual: R$ {saldo:.2f}")   
+    print(f"Saldo atual: R$ {saldo:.2f}")  
+    print("\n" + "=" * 100) 
     
 def criar_usuario(usuarios):
     cpf = input("Informe o CPF (somente números): ")
@@ -72,9 +73,20 @@ def criar_conta(agencia, numero_conta, usuarios):
     cpf = input("Informe o CPF do usuário: ")
     if cpf not in usuarios:
         print("\n*** Usuário não encontrado, fluxo de criação de conta encerrado! ***")
+        
         return None
 
     conta = {"agencia": agencia, "numero_conta": numero_conta, "usuario": usuarios[cpf]}
     print("\n=== Conta criada com sucesso! ===")
-    return conta    
+    
+    return conta  
+
+def listar_contas(contas):
+    print("\n" +" LISTA DE CONTAS ".center(30, "="))
+    for i, conta in enumerate(contas, start=1):
+        print(f"\nConta {i}:")
+        print(f"Agência:\t{conta['agencia']}")
+        print(f"Número:\t\t{conta['numero_conta']}")
+        print(f"Titular:\t{conta['usuario']['nome']}")
+        print("\n" + "=" * 100)  
  
